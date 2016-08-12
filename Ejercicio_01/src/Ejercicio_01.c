@@ -56,7 +56,7 @@ char* string_concat(char* unString, char* otroString){
 
 	return resultadoFinal;
 }
-															//Va ** porque me llega un puntero por parametro
+	//En char** saludo va ** porque me llega un puntero por parametro
 void string_concat_dynamic(char* unString, char* otroString, char** saludo){
 
 	//Reuso la funcion hecha anteriormente para no repetir codigo
