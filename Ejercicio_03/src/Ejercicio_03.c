@@ -4,6 +4,7 @@
 #include <string.h>
 #include <commons/txt.h>
 #include <commons/collections/node.h>
+#include <commons/string.h>
 #include <stdbool.h>
 
 void registrarPersonaEnLista();
@@ -18,15 +19,6 @@ typedef struct Persona{
 	struct Persona *sig;
 }t_persona;
 
-t_persona *persona;
-
-//Lista de personas
-typedef struct {
-		t_persona *persona;
-		int elements_count;
-	}t_list;
-
-t_list* list_create();
 
 
 int main(int argc, char** argv) {
@@ -34,33 +26,30 @@ int main(int argc, char** argv) {
 	FILE *archivo;
 	char* filaDelArchivo;
 	FILE *archivoFinal;
+	t_persona *persona = malloc(sizeof(t_persona));
 
 	archivo = fopen("personas.txt","r");
-	archivoFinal = fopen("/home/utnso/workspace/MaterialSO/Ejercicio_03/personasFinales.txt","w");
+	archivoFinal = fopen("personasFinales.txt","w");
 
-	//Modificar lo de dentro del while
-	while(!feof(archivo)){
-			//Leer linea entera o leer por partes e ir asignando los datos al nodo
 
-			registrarPersonaEnLista(filaDelArchivo); //solo los menores de 18
-			//Loguear persona si correspondiera (saldo menor a 100)
+	while(fgets(filaDelArchivo, sizeof(filaDelArchivo), archivo)){
+
+			registrarPersonaEnLista(filaDelArchivo, persona);
+
 		}
-
 
 	//Ordenar la lista por region y edad (usar funcion de las commons)
 
 	//Escribir en el archivo de salida
-
+	free(persona);
+	fclose(archivo);
 	return 0;
 }
 
-//Completar el registro de las personas en la lista (solo los menores de 18)
-void registrarPersonaEnLista(char* filaDelArchivo){
 
+void registrarPersonaEnLista(char* filaDelArchivo, t_persona* persona){
 
-
-	//Cargar datos de la persona en el nodo
-
-	//Insertar nodo en la lista
+	char* search = ";";
+	string_split(filaDelArchivo,search);
 
 }
