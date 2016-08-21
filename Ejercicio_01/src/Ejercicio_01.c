@@ -2,10 +2,17 @@
 #include <stdlib.h>
 #include <memory.h>
 #include <string.h>
+#include <commons/string.h>
+#include <commons/collections/list.h>
+#include <commons/txt.h>
+#include <stdbool.h>
+
 
 char* string_concat();
 void string_concat_dynamic();
 void mail_split();
+
+
 
 int main(int argc, char** argv) {
 //Parte1
@@ -16,6 +23,9 @@ int main(int argc, char** argv) {
 	printf("%s\n", saludo);
 
 	printf("-------------------------\n");
+
+	t_list* lista;
+	lista = list_create();
 
 //Parte2
 	char* nombre2 = "Richie";
