@@ -24,8 +24,11 @@ int main(int argc, char** argv) {
 
 	printf("-------------------------\n");
 
-	t_list* lista;
-	lista = list_create();
+
+	free(saludo);
+
+//	t_list* lista;
+//	lista = list_create();
 
 //Parte2
 	char* nombre2 = "Richie";
@@ -36,6 +39,9 @@ int main(int argc, char** argv) {
 	printf("%s\n", saludo2);
 
 	printf("-------------------------\n");
+
+
+	free(saludo2);
 
 //Parte3
 	//Aca necesito usar la funcion strdup porque strtok modifica el string (mail),
@@ -48,8 +54,11 @@ int main(int argc, char** argv) {
 	mail_split(mail, &user, &dominio);
 
 	printf("User: %s\n", user);
-	printf("Dominio: %s", dominio);
+	printf("Dominio: %s\n", dominio);
 
+	printf("-------------------------\n");
+
+	free(mail);
 
     return 0;
  }
