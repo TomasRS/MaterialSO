@@ -95,7 +95,9 @@ void cal(){
 		for(i=0;i<n;i++){
 			printf("P%d\t",dead[i]);
 		}
-		printf("\n\n");
+		printf("\n");
+		printf("------------------------------------------------------------------");
+		printf("\n");
 	}
 	else{
 		printf("\nNo ocurrio Deadlock\n");
