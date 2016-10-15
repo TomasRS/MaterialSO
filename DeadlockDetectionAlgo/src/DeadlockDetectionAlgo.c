@@ -10,14 +10,12 @@ int n,r;
 
 //Encabezados de funciones
 void input();
-void show();
 void cal();
 
 
 int main(){
 	printf("********** Algoritmo de deteccion de Deadlock ************\n");
 	input();
-	show();
 	cal();
 	getch();
 	return 0;
@@ -25,9 +23,9 @@ int main(){
 
 void input(){
 	int i,j;
-	printf("Ingresar la Cantidad de Procesos\t");
+	printf("Ingresar la Cantidad de Procesos (filas)\t");
 	scanf("%d",&n);
-	printf("Ingresar la Cantidad de Recursos\t");
+	printf("Ingresar la Cantidad de Recursos (columnas)\t");
 	scanf("%d",&r);
 	printf("Ingresar la Matriz de Maximos\n");
 	for(i=0;i<n;i++){
@@ -44,26 +42,6 @@ void input(){
 	printf("Ingresar Vector de Recursos Disponibles\n");
 	for(j=0;j<r;j++){
 		scanf("%d",&avail[j]);
-	}
-}
-
-void show(){
-	int i,j;
-	printf("Procesos\t Asignacion\t Maximos\t Disponibles\t");
-	for(i=0;i<n;i++){
-		printf("\nP%d\t   ",i+1);
-		for(j=0;j<r;j++){
-			printf("%d ",alloc[i][j]);
-		}
-		printf("\t");
-		for(j=0;j<r;j++){
-			printf("%d ",max[i][j]);
-		}
-		printf("\t");
-		if(i==0){
-			for(j=0;j<r;j++)
-				printf("%d ",avail[j]);
-		}
 	}
 }
 
@@ -117,7 +95,7 @@ void cal(){
 		for(i=0;i<n;i++){
 			printf("P%d\t",dead[i]);
 		}
-		printf("\n");
+		printf("\n\n");
 	}
 	else{
 		printf("\nNo ocurrio Deadlock\n");
