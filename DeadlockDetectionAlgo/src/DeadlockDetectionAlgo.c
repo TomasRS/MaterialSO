@@ -1,13 +1,19 @@
 #include<stdio.h>
 #include<ncurses.h>
+
+//Variables globales
 int max[100][100];
 int alloc[100][100];
 int need[100][100];
 int avail[100];
 int n,r;
+
+//Encabezados de funciones
 void input();
 void show();
 void cal();
+
+
 int main(){
 	printf("********** Algoritmo de deteccion de Deadlock ************\n");
 	input();
@@ -21,7 +27,7 @@ void input(){
 	int i,j;
 	printf("Ingresar la Cantidad de Procesos\t");
 	scanf("%d",&n);
-	printf("Enter la Cantidad de Recursos\t");
+	printf("Ingresar la Cantidad de Recursos\t");
 	scanf("%d",&r);
 	printf("Ingresar la Matriz de Maximos\n");
 	for(i=0;i<n;i++){
@@ -43,7 +49,7 @@ void input(){
 
 void show(){
 	int i,j;
-	printf("Process\t Allocation\t Max\t Available\t");
+	printf("Procesos\t Asignacion\t Maximos\t Disponibles\t");
 	for(i=0;i<n;i++){
 		printf("\nP%d\t   ",i+1);
 		for(j=0;j<r;j++){
@@ -111,8 +117,9 @@ void cal(){
 		for(i=0;i<n;i++){
 			printf("P%d\t",dead[i]);
 		}
+		printf("\n");
 	}
 	else{
-		printf("\nNo ocurrio Deadlock");
+		printf("\nNo ocurrio Deadlock\n");
 	}
 }
